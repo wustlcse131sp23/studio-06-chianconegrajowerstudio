@@ -12,13 +12,23 @@ public class IterativeMethods {
 	 * @return the sum of the first n terms of the geometric series (1/2 + 1/4 + 1/8
 	 *         ...)
 	 */
-	public static double geometricSum(int n) {
+	public static double geometricSummer(int n) {
 		double sum = 0.0;
 		for (int power = 1; power <= n; ++power) {
 			sum = sum + Math.pow(0.5, power);
 		}
 		return sum;
 	}
+	
+	public static double geometricSum(int n) {
+		
+		if (n == 0)
+			return 0 ; 
+		else  
+			return  geometricSum(n-1)+ (1/Math.pow(2, n));
+		
+	}
+		
 
 	/**
 	 * @param p first operand
